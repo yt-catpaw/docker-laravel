@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/image', 'Admin\ImageController@index')->name("imageForm.show");
+
+Route::post('/image/upload', 'Admin\ImageController@imageUpload')->name("upload");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
